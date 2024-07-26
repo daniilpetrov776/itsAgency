@@ -1,0 +1,22 @@
+.header-menu__list {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  list-style-type: none;
+}
+
+.header-menu__button {
+  background-color: transparent;
+  border: none;
+
+  &--cart {
+    width: 24px;
+    height: 24px;
+    background-color: #7bb899;
+    border-radius: 50%;
+  }
+}
+
+.header-menu__button-text {
+  font-weight: 500;
+}

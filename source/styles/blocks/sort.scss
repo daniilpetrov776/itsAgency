@@ -1,0 +1,22 @@
+.sort__sort-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: wrap column;
+  padding: 0;
+  list-style-type: none;
+  width: 165px;
+}
+
+.sort__sort-list-item {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+.sort__button-text {
+font-size: 12px;
+line-height: 12px;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+}

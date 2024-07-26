@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <title>Каталог товаров</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="preload" href="#" type="font/woff2" as="font">
+    <link rel="preload" href="./fonts/Inter-LightBETA.woff2" type="font/woff2" as="font">
+    <link rel="preload" href="./fonts/Inter-Regular.woff2" type="font/woff2" as="font">
+    <link rel="preload" href="./fonts/Inter-Medium.woff2" type="font/woff2" as="font">
+    <link rel="preload" href="./fonts/Inter-SemiBold.woff2" type="font/woff2" as="font">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/index.js" defer></script>
   </head>
@@ -84,6 +87,11 @@
                 </svg>
               </button>
             </li>
+            <li class="header-menu__list-item">
+              <button class="header-menu__button header-menu__button--cart">
+                <span class="header-menu__button-text">4</span>
+              </button>
+            </li>
           </ul>
         </div>
         <div class="header__breadcrumbs breadcrumbs">
@@ -109,8 +117,8 @@
             <div class="hero__swiper swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <p class="slide__header">Краски</p>
-                  <p class="slide__content">Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!</p>
+                  <p class="swiper__slide-header">Краски</p>
+                  <p class="swiper__slide-content">Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!</p>
                 </div>
                 <div class="swiper-slide">Slide 2</div>
                 <div class="swiper-slide">Slide 3</div>
@@ -158,21 +166,21 @@
               <button class="cards-header__mobile-sort-button">Фильтры</button>
               <h2 class="visually-hidden">Фильтрация</h2>
               <div class="cards-header__select select" tabindex="1">
-                <span class="select_value">Параметр 1</span>
+                <span class="select__value">Сначала дорогие</span>
                 <ul class="select__dropdown">
-                  <li class="select__option">Параметр 1</li>
-                  <li class="select__option">Параметр 2</li>
-                  <li class="select__option">Параметр 3</li>
-                  <li class="select__option">Параметр 4</li>
+                  <li class="select__option">Сначала дорогие</li>
+                  <li class="select__option">Сначала недорогие</li>
+                  <li class="select__option">Сначала популярные</li>
+                  <li class="select__option">Сначала новые</li>
                 </ul>
               </div>
             </div>
             <div class="cards__products products">
               <ul class="products__products-list">
-                <li class="products__products-list-item">
+                <li class="products__products-list-item card">
                   <picture>
-                    <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.png 1x, ./images/mock-item@2x.png 2x" width="278" height="278">
-                    <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.webp 1x, ./images/mock-item@2x.webp 2x" width="278" height="278">
+                    <source media="(min-width: 768px)" srcset="./images/mock-item@1x.png 1x, ./images/mock-item@2x.png 2x" width="278" height="278">
+                    <source media="(min-width: 768px)" srcset="./images/mock-item@1x.webp 1x, ./images/mock-item@2x.webp 2x" width="278" height="278">
                     <source media="(min-width: 320px)" srcset="./images/mock-item-mobile@1x.webp 1x, ./images/mock-item-mobile@2x.webp 2x" width="156" height="156">
                     <img class="card__card-image" src="./images/mock-item-mobile@1x.png" alt="Краска." width="156" height="156" srcset="./images/mock-item-mobile@2x.png@2x.png">
                   </picture>
@@ -181,7 +189,6 @@
                     <p class="card__card-price">4800 ₽</p>
                     <button class="card__add-button add-button">
                       <img class="add-button__desktop" src="./images/plus.svg" alt="Добавить в корзину." width="20" height="20">
-                      <img class="add-button__mobile" src="./images/plus-mobile.svg" alt="Добавить в корзину." width="16" height="16">
                     </button>
                   </div>
                 </li>
@@ -202,12 +209,39 @@
           </div>
           <div class="cart__cart-info">
             <p class="cart__cart-count">
+              4 товара
               <!-- Здесь будет текст с количеством товаров, который будет склонять специальный скрипт в зависимости от числа товаров -->
             </p>
             <button class="cart__cart-clear">очистить список</button>
           </div>
           <ul class="cart__cart-list">
-            <li class="cart__cart-list-item"></li>
+            <li class="cart__cart-list-item cart-product">
+              <picture>
+                <source media="(min-width: 320px)" srcset="./images/mock-item-cart@1x.webp 1x, ./images/mock-item-cart@2x.webp 2x" width="96" height="96">
+                <img class="cart-product__image" src="./images/mock-item-cart@1x.png" alt="Краска." width="96" height="96" srcset="./images/mock-item-cart@2x.png">
+              </picture>
+              <div class="cart-product__title-wrapper">
+                <h3 class="cart-product__title">Краска Wallquest, Brownsone MS90102</h3>
+                <p class="cart-product__price">9600 ₽</p>
+              </div>
+              <div class="cart-product__interface">
+                <div class="cart-product__count-wrapper">
+                  <button class="cart-product__decrease" type="button" aria-label="Уменьшить.">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.33 8h9.34" stroke="#000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="cart-product__product-counter">2</div>
+                  <button class="cart-product__increase" type="button" aria-label="Увеличить.">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.33 8h9.34" stroke="#000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+                <button class="cart-product__action" aria-label="Удалить."></button>
+              </div>
+            </li>
+            <!-- Сюда вставляются карточки товаров -->
           </ul>
         </div>
       </section>
@@ -216,8 +250,31 @@
 
     <!-- шаблон карточки товара в корзине -->
     <template>
-      <li>
-
+      <li class="cart__cart-list-item cart-product">
+        <picture>
+          <source media="(min-width: 320px)" srcset="./images/mock-item-mobile@1x.webp 1x, ./images/mock-item-mobile@2x.webp 2x" width="96" height="96">
+          <img class="cart-product__image" src="./images/mock-item-cart@1x.png" alt="Краска." width="96" height="96" srcset="./images/mock-item-cart@2x.png">
+        </picture>
+        <div class="cart-product__title-wrapper">
+          <h3 class="cart-product__title">Краска Wallquest, Brownsone MS90102</h3>
+          <p class="cart-product__price">9600 ₽</p>
+        </div>
+        <div class="cart-product__interface">
+          <div class="cart-product__count-wrapper">
+            <button class="cart-product__decrease" type="button" aria-label="Уменьшить.">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33 8h9.34" stroke="#000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="cart-product__product-counter">2</div>
+            <button class="cart-product__increase" type="button" aria-label="Увеличить.">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33 8h9.34" stroke="#000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <button class="cart-product__action" aria-label="Удалить."></button>
+        </div>
       </li>
     </template>
     <!-- шаблон карточки товара -->

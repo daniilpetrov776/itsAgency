@@ -1,0 +1,14 @@
+.navigation__navigation-list {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  padding: 0;
+  list-style-type: none;
+  gap: 24px;
+}
+
+.navigation__navigation-link {
+  color: $main-color;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

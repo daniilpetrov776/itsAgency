@@ -1,0 +1,22 @@
+.breadcrumbs__list {
+  position: absolute;
+  left: 50px;
+  top: 150px;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  padding: 0;
+  list-style-type: none;
+  gap: 19px;
+  left: 64px;
+  top: 80px;
+}
+
+.breadcrumbs__text {
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0.3;
+  letter-spacing: 0.06em;
+}

@@ -1,0 +1,25 @@
+.cart__cart-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.cart__cart-title {
+  font-size: 30px;
+  line-height: 26.4px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.cart__cart-count {
+  font-size: 14px;
+  line-height: 15.6px;
+}
+
+.cart__cart-clear {
+  font-size: 14px;
+  line-height: 15.6px;
+  font-weight: 300;
+  opacity: 0.4;
+  border: none;
+  background-color: transparent;
+}

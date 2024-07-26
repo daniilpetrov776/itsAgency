@@ -1,0 +1,15 @@
+.cards-header {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.cards-header__amount {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
