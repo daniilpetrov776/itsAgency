@@ -14,14 +14,213 @@
         <a class="header__logo" href="">
           <picture>
             <source>
-            <img clas="header__logo-image" src="" alt="">
+            <img clas="header__logo-image" src="./images/logo.svg" alt="Логотип компании." width="131" height="26">
           </picture>
         </a>
+        <nav class="header__navigation navigation">
+          <ul class="navigation__navigation-list">
+            <li class="navigation__navigation-list-item">
+              <a class="navigation__navigation-link" href="#">
+                Продукты
+              </a>
+            </li>
+            <li class="navigation__navigation-list-item">
+              <a class="navigation__navigation-link" href="#">
+                Цвета
+              </a>
+            </li>
+            <li class="navigation__navigation-list-item">
+              <a class="navigation__navigation-link" href="#">
+                Вдохновение
+              </a>
+            </li>
+            <li class="navigation__navigation-list-item">
+              <a class="navigation__navigation-link" href="#">
+                Советы
+              </a>
+            </li>
+            <li class="navigation__navigation-list-item">
+              <a class="navigation__navigation-link" href="#">
+                Найти магазин
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__header-contacts">
+          <a class="header__phone" href="tel:+74952217769">+7 (495) 221-77-69</a>
+          <p class="header__phone-text">Заказать звонок</p>
+        </div>
+        <div class="header__header-menu header-menu">
+          <ul class="header-menu__list">
+            <li class="header-menu__list-item">
+              <button class="header-menu__button header-menu__button--search">
+                <svg viewBox="0 0 20 20" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.17 15.83a6.67 6.67 0 1 0 0-13.33 6.67 6.67 0 0 0 0 13.33Zm8.33 1.67-3.63-3.63" stroke="#1F2020"
+                    stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </li>
+            <li class="header-menu__list-item">
+              <button class="header-menu__button header-menu__button--profile">
+                <svg viewBox="0 0 22 22" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#a)" stroke="#000" stroke-width="1.2">
+                    <circle cx="11" cy="23" r="8.4" />
+                    <circle cx="11" cy="7" r="3.4" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h22v22h-22z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </li>
+            <li class="header-menu__list-item">
+              <button class="header-menu__button header-menu__button--like">
+                <svg viewBox="0 0 22 22" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 19c-.26 0-.5-.1-.7-.26-.72-.64-1.42-1.23-2.04-1.76a38.05 38.05 0 0 1-4.47-4.2 6.69 6.69 0 0 1-1.79-4.37 5.62 5.62 0 0 1 1.43-3.84 4.84 4.84 0 0 1 3.6-1.57c1.03 0 2.02.34 2.83.98.43.34.82.74 1.14 1.19.32-.45.7-.85 1.14-1.2.8-.63 1.8-.97 2.83-.97a4.84 4.84 0 0 1 3.6 1.57 5.61 5.61 0 0 1 1.43 3.84 6.69 6.69 0 0 1-1.78 4.38 38.04 38.04 0 0 1-4.47 4.19c-.62.52-1.32 1.12-2.05 1.76-.2.17-.44.26-.7.26Z"
+                    stroke="#000" stroke-width="1.2" />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="header__breadcrumbs breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__list-item">
+              <span class="breadcrumbs__text">Главная</span>
+            </li>
+            <li class="breadcrumbs__list-item">
+              <span class="breadcrumbs__text">Продукты</span>
+            </li>
+            <li class="breadcrumbs__list-item">
+              <span class="breadcrumbs__text">Краски</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main class="page__catalog catalog">
-      <h1>Страница для старта</h1>
+      <section class="catalog__hero-section page-section">
+        <div class="catalog__hero-section-wrapper catalog-section-wrapper">
+          <h1 class="visually-hidden">Каталог продуктов для покраски</h1>
+          <div class="catalog-section-wrapper__hero hero">
+            <div class="hero__swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <p class="slide__header">Краски</p>
+                  <p class="slide__content">Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!</p>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="catalog__products page-section">
+        <div class="catalog__products-wrapper catalog-section-wrapper">
+          <div class="catalog-section-wrapper__sort sort">
+            <h2 class="visually-hidden">Сортировка.</h2>
+            <ul class="sort__sort-list">
+              <li class="sort__sort-list-item">
+                <button class="sort__sort-button sort-button sort-button--active"></button>
+                <span class="sort__button-text">Новинки</span>
+              </li>
+              <li class="sort__sort-list-item">
+                <button class="sort__sort-button sort-button"></button>
+                <span class="sort__button-text">Есть в наличии</span>
+              </li>
+              <li class="sort__sort-list-item">
+                <button class="sort__sort-button sort-button"></button>
+                <span class="sort__button-text">Контрактные</span>
+              </li>
+              <li class="sort__sort-list-item">
+                <button class="sort__sort-button sort-button"></button>
+                <span class="sort__button-text">Эксклюзивные</span>
+              </li>
+              <li class="sort__sort-list-item">
+                <button class="sort__sort-button sort-button"></button>
+                <span class="sort__button-text">Распродажа</span>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog-section-wrapper__cards cards">
+            <div class="cards__cards-header cards-header">
+              <span class="cards-header__amount">412 товаров</span>
+              <button class="cards-header__mobile-sort-button">Фильтры</button>
+              <h2 class="visually-hidden">Фильтрация</h2>
+              <div class="cards-header__select select" tabindex="1">
+                <span class="select_value">Параметр 1</span>
+                <ul class="select__dropdown">
+                  <li class="select__option">Параметр 1</li>
+                  <li class="select__option">Параметр 2</li>
+                  <li class="select__option">Параметр 3</li>
+                  <li class="select__option">Параметр 4</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cards__products products">
+              <ul class="products__products-list">
+                <li class="products__products-list-item">
+                  <picture>
+                    <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.png 1x, ./images/mock-item@2x.png 2x" width="278" height="278">
+                    <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.webp 1x, ./images/mock-item@2x.webp 2x" width="278" height="278">
+                    <source media="(min-width: 320px)" srcset="./images/mock-item-mobile@1x.webp 1x, ./images/mock-item-mobile@2x.webp 2x" width="156" height="156">
+                    <img class="card__card-image" src="./images/mock-item-mobile@1x.png" alt="Краска." width="156" height="156" srcset="./images/mock-item-mobile@2x.png@2x.png">
+                  </picture>
+                  <h3 class="card__card-title">Краска Wallquest, Brownsone MS90102</h3>
+                  <div class="card__card-price-wrapper">
+                    <p class="card__card-price">4800 ₽</p>
+                    <button class="card__add-button add-button">
+                      <img class="add-button__desktop" src="./images/plus.svg" alt="Добавить в корзину." width="20" height="20">
+                      <img class="add-button__mobile" src="./images/plus-mobile.svg" alt="Добавить в корзину." width="16" height="16">
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="catalog__cart cart page-section">
+        <div class="cart__cart-wrapper">
+          <div class="cart__cart-header">
+            <h2 class="cart__cart-title">Корзина</h2>
+            <button class="cart__cart-close" type="button" aria-label="Закрыть.">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="m18 6-12 12m0-12 12 12" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="page__footer footer"></footer>
+    <template id="card">
+      <li class="products__products-list-item">
+        <picture>
+          <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.png 1x, ./images/mock-item@2x.png 2x" width="278" height="278">
+          <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.webp 1x, ./images/mock-item@2x.webp 2x" width="278" height="278">
+          <source media="(min-width: 320px)" srcset="./images/mock-item-mobile@1x.webp 1x, ./images/mock-item-mobile@2x.webp 2x" width="156" height="156">
+          <img class="card__card-image" src="./images/mock-item-mobile@1x.png" alt="Краска." width="156" height="156" srcset="./images/mock-item-mobile@2x.png@2x.png">
+        </picture>
+        <h3 class="card__card-title">Краска Wallquest, Brownsone MS90102</h3>
+        <div class="card__card-price-wrapper">
+          <p class="card__card-price">4800 ₽</p>
+          <button class="card__add-button add-button">
+            <img class="add-button__desktop" src="./images/plus.svg" alt="Добавить в корзину." width="20" height="20">
+            <img class="add-button__mobile" src="./images/plus-mobile.svg" alt="Добавить в корзину." width="16" height="16">
+          </button>
+        </div>
+      </li>
+    </template>
   </body>
 </html>
