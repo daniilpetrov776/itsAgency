@@ -7,5 +7,17 @@
 }
 
 .products__products-list-item {
-  min-width: 278px;
+  width: 278px;
+}
+
+
+@media (max-width: $max-mobile-width) {
+  .products__products-list{
+    grid-template-columns: 1fr 1fr;
+    gap: 59px 15px;
+  }
+
+  .products__products-list-item {
+    width: 156px;
+  }
 }

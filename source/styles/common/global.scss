@@ -30,4 +30,6 @@ a {
 button {
   cursor: pointer;
   font-family: inherit;
+
+  @include state-styles(0.3,0.7, 0.1s)
 }

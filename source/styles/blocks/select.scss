@@ -33,12 +33,17 @@
   flex-flow: wrap;
 }
 
+.select__value {
+  @include state-styles(0.3,0.7, 0.1s)
+}
+
 .select:focus .select__dropdown {
   display: block;
 }
 
 .select__option:hover {
   background-color: #7bb899;
+  transition: background-color 0.3s;
 }
 
 @media (max-width: $max-mobile-width) {

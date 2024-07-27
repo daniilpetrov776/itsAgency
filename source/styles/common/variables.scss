@@ -3,3 +3,21 @@ $max-mobile-width: 810px;
 $desktop-width: 1920px;
 $main-color: #1f2020;
 $bezier: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+@mixin state-styles($hover: null, $active: null, $transition: null) {
+  &:hover {
+    @if $hover != null {
+      opacity: $hover;
+    }
+  }
+
+  &:active {
+    @if $active != null {
+      opacity: $active;
+    }
+  }
+
+  @if $transition != null {
+    transition: opacity $transition cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
+}

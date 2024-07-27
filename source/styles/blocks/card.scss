@@ -1,3 +1,7 @@
+.card {
+  position: relative;
+}
+
 .card__card-title {
   font-size: 16px;
   line-height: 18px;
@@ -24,6 +28,39 @@
   transition: opacity 0.3s $bezier;
 }
 
-.card:hover .card__add-button {
+@media (min-width: $max-mobile-width) {
+  .card:hover .card__add-button {
   opacity: 1;
+  @include state-styles(0.5, 1, 0.1s)
+  }
+
+  .card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -34px;
+    height: 1px;
+    background-color: #00000010;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .card__add-button {
+    opacity: 1;
+  }
+
+  .card__card-title {
+    padding: 0;
+  }
+
+  .card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -34px;
+    height: 1px;
+    background-color: #00000010;
+  }
 }

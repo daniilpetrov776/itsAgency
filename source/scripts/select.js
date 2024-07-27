@@ -1,7 +1,5 @@
-const select = document.querySelector('.select');
 const selectValue = document.querySelector('.select__value');
 const selectDropdown = document.querySelector('.select__dropdown');
-console.log(selectDropdown)
 
 const onSelectDropdownClick = (evt) => {
   const option = evt.target.closest('.select__option');
