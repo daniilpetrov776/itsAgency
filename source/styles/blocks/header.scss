@@ -2,9 +2,24 @@
   position: relative;
   display: flex;
   align-items: center;
-  flex-flow: wrap;
   padding: 0 64px;
+  min-height: 104px;
 }
+
+.header__logo-wrapper {
+  flex-shrink: 0;
+}
+
+.header__menu-wrapper {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  column-gap: 10px;
+}
+
+// .header__header-contacts {
+//   margin: 0 0 0 auto;
+// }
 
 .header__phone {
   color: $main-color;
@@ -17,4 +32,68 @@
 .header__phone-text {
   margin: 0;
   opacity: 0.3;
+}
+
+.header__burger-menu {
+  display: none;
+}
+
+@media (min-width: $max-mobile-width) {
+  .header__menu-wrapper {
+    margin: 0 0 0 172px;
+    width: 100%;
+  }
+
+  .header__right-wrapper {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    margin: 0 0 0 auto;
+    column-gap: 116px;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .header__header-wrapper {
+    padding: 0 24px;
+    min-height: 64px;
+  }
+
+  .header__logo-wrapper {
+    margin: 0 auto;
+  }
+
+  .header__logo {
+    margin: 0 auto;
+  }
+
+  .header__header-contacts {
+    display: none;
+  }
+
+  .header__burger-menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      left: 0;
+      top: -6px;
+      background-color: #000000;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      left: 0;
+      bottom: -6px;
+      background-color: #000000;
+    }
+  }
 }

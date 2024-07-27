@@ -13,3 +13,24 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+.cards-header__mobile-sort-button {
+  display: none;
+}
+
+@media (max-width: $max-mobile-width) {
+  .cards-header__amount {
+    display: none;
+  }
+
+  .cards-header__mobile-sort-button {
+    display: block;
+    font-size: 12px;
+    line-height: 14.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: none;
+    background-color: transparent;
+  }
+}

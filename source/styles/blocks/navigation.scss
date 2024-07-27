@@ -12,3 +12,9 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+
+@media (max-width: $max-mobile-width) {
+  .navigation {
+    display: none;
+  }
+}

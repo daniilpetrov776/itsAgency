@@ -1,7 +1,5 @@
 .breadcrumbs__list {
   position: absolute;
-  left: 50px;
-  top: 150px;
   display: flex;
   align-items: center;
   flex-flow: wrap;
@@ -19,4 +17,10 @@
   text-transform: uppercase;
   opacity: 0.3;
   letter-spacing: 0.06em;
+}
+
+@media (max-width: $max-mobile-width) {
+  .breadcrumbs__text {
+    color: $main-color;
+  }
 }

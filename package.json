@@ -18,6 +18,7 @@
     "build": "gulp buildProd",
     "preview": "npm run build && browser-sync start -s build/ --cors --no-notify --no-ui",
     "lint": "npm-run-all -pc lint:**",
+    "lint:fix": "stylelint \"source/styles/**/*.scss\" --fix",
     "lint:spaces": "ec --exclude vendor/*",
     "lint:markup": "cd source && html-validator --quiet",
     "lint:html": "linthtml source/**/*.html --config .linthtmlrc",

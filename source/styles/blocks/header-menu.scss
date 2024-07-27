@@ -3,6 +3,7 @@
   flex-flow: wrap;
   align-items: center;
   list-style-type: none;
+  padding: 0;
 }
 
 .header-menu__button {
@@ -19,4 +20,10 @@
 
 .header-menu__button-text {
   font-weight: 500;
+}
+
+@media (max-width: $max-mobile-width) {
+  .header-menu__list-item:not(:last-child) {
+    display: none;
+  }
 }
