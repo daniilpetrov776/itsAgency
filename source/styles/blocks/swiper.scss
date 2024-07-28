@@ -1,14 +1,16 @@
-.swiper {
-  min-height: 560px;
-  display: flex;
-  // align-items: center;
+.swiper-slide {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../images/hero@1x.jpg');
 }
 
 .swiper-wrapper {
   text-align: center;
   margin: 0 auto;
-  padding: 216px 0 0;
+  padding: 0;
   transform: translateX(8px);
+  height: 560px;
 }
 
 .swiper__slide-header {
@@ -33,3 +35,14 @@
     display: none;
   }
 }
+.swiper {
+  width: 1920px;
+  height: 560px;
+}
+.swiper-slide {
+  width: 100%;
+}
+
+// .swiper-pagination .swiper-pagination-bullet  {
+//   background-color: tomato;
+// }
