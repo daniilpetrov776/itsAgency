@@ -29,6 +29,11 @@
   background-color: #7bb899;
 }
 
+.sort__sort-button:focus-visible ~ .sort__button-text::before {
+  outline: solid 2px #000000;
+  // z-index: 2;
+}
+
 .sort__button-text {
   font-size: 12px;
   line-height: 12px;

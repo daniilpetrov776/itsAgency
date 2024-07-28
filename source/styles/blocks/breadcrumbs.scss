@@ -37,6 +37,11 @@
 }
 
 @media (max-width: $max-mobile-width) {
+  .breadcrumbs__list {
+    left: 24px;
+    top: 100%;
+  }
+
   .breadcrumbs__text {
     color: $main-color;
   }

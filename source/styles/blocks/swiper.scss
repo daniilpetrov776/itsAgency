@@ -18,7 +18,7 @@
   line-height: 63px;
   color: #ffffff;
   letter-spacing: -0.02em;
-  margin: 0 0 25px;
+  margin: 217px 0 25px;
 }
 
 .swiper__slide-content {
@@ -30,11 +30,6 @@
   margin: 0 auto;
 }
 
-@media (max-width: $max-mobile-width) {
-  .swiper {
-    display: none;
-  }
-}
 .swiper {
   width: 1920px;
   height: 560px;
@@ -43,6 +38,54 @@
   width: 100%;
 }
 
-// .swiper-pagination .swiper-pagination-bullet  {
-//   background-color: tomato;
-// }
+.swiper-button-next {
+  &:focus {
+    outline: none;
+  }
+}
+
+.swiper-button-next:focus.swiper-button-next:after {
+  outline: solid 3px #000000;
+}
+
+.swiper-button-prev:focus.swiper-button-prev:after {
+  outline: solid 3px #000000;
+}
+
+.swiper-button-prev {
+  &:focus {
+    outline: none;
+  }
+}
+
+.swiper-button-next:after {
+  position: relative;
+  top: 94px;
+  right: 407px;
+  color: #ffffff;
+}
+
+.swiper-button-prev:after {
+  position: relative;
+  top: 94px;
+  left: 407px;
+  color: #ffffff;
+}
+
+.swiper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000066;
+  width: 124px;
+  height: 32px;
+  border-radius: 16px;
+  left: 50%;
+  bottom: 39px;
+  transform: translateX(-44%);
+}
+
+.swiper-pagination .swiper-pagination-bullet  {
+  width: 6px;
+  height: 6px;
+}

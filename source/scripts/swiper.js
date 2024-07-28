@@ -1,12 +1,14 @@
 import Swiper from 'swiper/bundle';
 
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
   direction: 'horizontal',
   loop: false,
   simulateTouch: false,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
 
-  // If we need pagination
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
@@ -14,7 +16,6 @@ const swiper = new Swiper('.swiper', {
 
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

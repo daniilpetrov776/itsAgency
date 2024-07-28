@@ -19,6 +19,12 @@
   }
 }
 
+.header-menu__list-item {
+  &--cart {
+    margin: 0 17px 0 0;
+  }
+}
+
 .header-menu__button-text {
   font-weight: 500;
 }
@@ -26,5 +32,11 @@
 @media (max-width: $max-mobile-width) {
   .header-menu__list-item:not(:last-child) {
     display: none;
+  }
+
+  .header-menu__list-item {
+    &--cart {
+      margin: 0;
+    }
   }
 }
