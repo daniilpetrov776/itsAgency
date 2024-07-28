@@ -3,7 +3,8 @@
   margin: 0;
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 278px);
+  gap: 33px 24px;
 }
 
 .products__products-list-item {
@@ -12,7 +13,7 @@
 
 
 @media (max-width: $max-mobile-width) {
-  .products__products-list{
+  .products__products-list {
     grid-template-columns: 1fr 1fr;
     gap: 59px 15px;
   }

@@ -3,6 +3,7 @@
   cursor: pointer;
   position: relative;
   user-select: none;
+  background-color: #ffffff;
 }
 
 .select__dropdown {
@@ -14,7 +15,8 @@
   margin: 0;
   list-style-type: none;
   display: none;
-  z-index: 10;
+  z-index: 3;
+  background-color: #ffffff;
 }
 
 
@@ -27,14 +29,30 @@
   text-transform: uppercase;
   cursor: pointer;
   min-height: 48px;
-  padding: 0 0 0 24px;
+  padding: 0 0 0 87px;
   display: flex;
   align-items: center;
   flex-flow: wrap;
 }
 
 .select__value {
-  @include state-styles(0.3,0.7, 0.1s)
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../../images/polygon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -14px;
+  }
+
+  @include state-styles(0.3,0.7, 0.1s);
 }
 
 .select:focus .select__dropdown {
@@ -53,6 +71,6 @@
 
   .select__option,
   .select__value {
-    padding: 0;
+    padding: 0 0 0 4px;
   }
 }

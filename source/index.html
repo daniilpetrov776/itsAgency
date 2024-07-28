@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Каталог товаров</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Магазин красок.">
   <link rel="preload" href="./fonts/Inter-LightBETA.woff2" type="font/woff2" as="font">
   <link rel="preload" href="./fonts/Inter-Regular.woff2" type="font/woff2" as="font">
   <link rel="preload" href="./fonts/Inter-Medium.woff2" type="font/woff2" as="font">
@@ -23,7 +24,10 @@
       </div>
       <div class="header__logo-wrapper">
         <a class="header__logo" href="#">
-          <img class="header__logo-image" src="./images/logo.svg" alt="Логотип компании." width="131" height="26">
+          <picture>
+            <source media="(min-width: 810px)" srcset="./images/logo.svg" width="131" height="26">
+            <img class="header__logo-image" src="./images/logo-mobile.svg" alt="Логотип компании." width="99" height="21">
+          </picture>
         </a>
       </div>
       <div class="header__menu-wrapper">
@@ -154,25 +158,29 @@
           <div class="sort__sort-wrapper sort__sort-wrapper--hidden">
             <ul class="sort__sort-list">
               <li class="sort__sort-list-item">
-                <button class="sort__sort-button sort-button sort-button--active" type="button"
-                  aria-label="Сортировка по."></button>
-                <span class="sort__button-text">Новинки</span>
+                <input class="sort__sort-button sort-button sort-button--active visually-hidden" type="checkbox"
+                  name="new" id="new" checked>
+                <label class="sort__button-text sort__button-text--active" for="new">Новинки</label>
               </li>
               <li class="sort__sort-list-item">
-                <button class="sort__sort-button sort-button" type="button" aria-label="Сортировка по."></button>
-                <span class="sort__button-text">Есть в наличии</span>
+                <input class="sort__sort-button sort-button sort-button--active visually-hidden" type="checkbox"
+                  name="available" id="available">
+                <label class="sort__button-text" for="available">Есть в наличии</label>
               </li>
               <li class="sort__sort-list-item">
-                <button class="sort__sort-button sort-button" type="button" aria-label="Сортировка по."></button>
-                <span class="sort__button-text">Контрактные</span>
+                <input class="sort__sort-button sort-button sort-button--active visually-hidden" type="checkbox"
+                  name="contract" id="contract">
+                <label class="sort__button-text" for="contract">Контрактные</label>
               </li>
               <li class="sort__sort-list-item">
-                <button class="sort__sort-button sort-button" type="button" aria-label="Сортировка по."></button>
-                <span class="sort__button-text">Эксклюзивные</span>
+                <input class="sort__sort-button sort-button sort-button--active visually-hidden" type="checkbox"
+                  name="exclusive" id="exclusive">
+                <label class="sort__button-text" for="exclusive">Эксклюзивные</label>
               </li>
               <li class="sort__sort-list-item">
-                <button class="sort__sort-button sort-button" type="button" aria-label="Сортировка по."></button>
-                <span class="sort__button-text">Распродажа</span>
+                <input class="sort__sort-button sort-button sort-button--active visually-hidden" type="checkbox"
+                  name="onsale" id="onsale">
+                <label class="sort__button-text" for="onsale">Распродажа</label>
               </li>
             </ul>
           </div>
@@ -182,6 +190,7 @@
             <span class="cards-header__amount">412 товаров</span>
             <button class="cards-header__mobile-sort-button" type="button">Фильтры</button>
             <h2 class="visually-hidden">Фильтрация</h2>
+            <div class="cards-header__select-background cards-header__select-background--hidden"></div>
             <div class="cards-header__select select" tabindex="0">
               <div class="select__value">Сначала дорогие</div>
               <ul class="select__dropdown">

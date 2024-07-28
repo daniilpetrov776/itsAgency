@@ -3,6 +3,7 @@
   flex-flow: wrap;
   align-items: center;
   position: relative;
+  min-height: 120px;
 
   &::before {
     content: "";
@@ -36,6 +37,8 @@
   align-items: center;
   justify-content: space-between;
   width: 189px;
+  position: relative;
+  right: -18px;
 }
 
 .cart-product__count-wrapper {

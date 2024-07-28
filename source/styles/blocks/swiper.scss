@@ -1,12 +1,14 @@
 .swiper {
   min-height: 560px;
   display: flex;
-  align-items: center;
+  // align-items: center;
 }
 
 .swiper-wrapper {
   text-align: center;
   margin: 0 auto;
+  padding: 216px 0 0;
+  transform: translateX(8px);
 }
 
 .swiper__slide-header {
@@ -14,6 +16,7 @@
   line-height: 63px;
   color: #ffffff;
   letter-spacing: -0.02em;
+  margin: 0 0 25px;
 }
 
 .swiper__slide-content {
@@ -22,6 +25,7 @@
   color: #ffffff;
   letter-spacing: 0.02em;
   max-width: 472px;
+  margin: 0 auto;
 }
 
 @media (max-width: $max-mobile-width) {

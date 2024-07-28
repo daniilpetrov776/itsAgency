@@ -7,13 +7,14 @@
   line-height: 18px;
   font-weight: 300;
   letter-spacing: 0.02em;
-  padding: 0 20px 0 0;
+  padding: 24px 20px 0 0;
 }
 
 .card__card-price {
   font-size: 16px;
   line-height: 16px;
   font-weight: 600;
+  margin: 0;
 }
 
 .card__card-price-wrapper {
@@ -30,18 +31,20 @@
 
 @media (min-width: $max-mobile-width) {
   .card:hover .card__add-button {
-  opacity: 1;
-  @include state-styles(0.5, 1, 0.1s)
-  }
+    opacity: 1;
 
-  .card:not(:last-child)::after {
+    @include state-styles(0.5, 1, 0.1s);
+  }
+  // Выбирает все карточки до 5 в каждой колонке. Если 6 карточек - то на новой строке не будет разделительной линии.
+  .card:not(:nth-last-child(-n+5))::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -34px;
+    bottom: -16px;
     height: 1px;
     background-color: #00000010;
+    z-index: 1;
   }
 }
 
@@ -52,6 +55,7 @@
 
   .card__card-title {
     padding: 0;
+    margin: 21px 0 19px;
   }
 
   .card:not(:last-child)::after {
