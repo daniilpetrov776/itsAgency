@@ -44,11 +44,11 @@
   }
 }
 
-.swiper-button-next:focus.swiper-button-next:after {
+.swiper-button-next:focus-visible.swiper-button-next:after {
   outline: solid 3px #000000;
 }
 
-.swiper-button-prev:focus.swiper-button-prev:after {
+.swiper-button-prev:focus-visible.swiper-button-prev:after {
   outline: solid 3px #000000;
 }
 

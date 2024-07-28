@@ -2,6 +2,7 @@ import Swiper from 'swiper/bundle';
 
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
+  init: false,
   loop: false,
   simulateTouch: false,
   keyboard: {
@@ -21,3 +22,5 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+swiper.init();
