@@ -22,4 +22,9 @@ const renderProducts = (products) => {
   cardsList.appendChild(fragment);
 };
 
-export { renderProducts };
+const removeProducts = () => {
+  const elements = cardsList.querySelectorAll('.card');
+  elements.forEach((element) => element.remove());
+};
+
+export { renderProducts, removeProducts };

@@ -1,4 +1,5 @@
-import { renderProducts } from './render-products.js';
+import { renderProducts, removeProducts } from './render-products.js';
+import { debounce } from './utils.js';
 
 const RERENDER_DELAY = 500;
 
@@ -6,6 +7,7 @@ const filterButton = document.querySelector('.cards-header__mobile-sort-button')
 const filterWrapper = document.querySelector('.sort__sort-wrapper');
 const filter = filterWrapper.querySelector('.sort__sort-list');
 const dragButton = filterWrapper.querySelector('.sort__sort-drag-button');
+const filterList = filterWrapper.querySelector('.sort__sort-list');
 
 let startY;
 let currentY;
@@ -147,20 +149,34 @@ export const getCheckboxStates = () => ({
 console.log(getCheckboxStates())
 
 function filterProducts(filterCriteria, products) {
-  // Проверяем, если все значения в фильтре false
-  const allKeysFalse = Object.values(filterCriteria).every((value) => !value);
+  const allKeysFalse = Object.values(filterCriteria).every(value => !value);
+
   if (allKeysFalse) {
-    return products; // Возвращаем все продукты
+    return products;
   }
 
-  // Фильтруем продукты
-  return products.filter((product) => Object.keys(filterCriteria).some((key) =>
-    // Проверяем, если значение фильтра true и соответствует значению продукта
-    filterCriteria[key] && product[key] === String(filterCriteria[key])
-  ));
+  return products.filter((product) =>
+    Object.keys(filterCriteria).every((key) =>
+      !filterCriteria[key] || product[key] === String(filterCriteria[key])
+    )
+  );
 }
+
+const renderFilteredPhotos = debounce((products) => {
+  removeProducts();
+  renderProducts(products);
+}, RERENDER_DELAY);
+
 const updateFilter = (products) => {
-  const filteredProducts = filterProducts(getCheckboxStates(), products);
-  console.log(filteredProducts)
-}
-export { updateFilter };
+  console.log(filterProducts(getCheckboxStates(), products))
+  renderFilteredPhotos(filterProducts(getCheckboxStates(), products));
+};
+
+const initFilters = (products) => {
+  filterList.addEventListener('click', (evt) => {
+    if (evt.target.matches('input')) {
+      updateFilter(products);
+    }
+  });
+};
+export { initFilters };
