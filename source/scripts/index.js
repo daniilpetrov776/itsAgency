@@ -3,6 +3,7 @@ import { swiper } from './swiper.js';
 import { getData } from './api.js';
 import { renderProducts } from './render-products.js';
 import './cart.js';
+import './filter.js';
 
 swiper.init();
 document.addEventListener('click', onSelectClick);

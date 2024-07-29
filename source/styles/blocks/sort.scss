@@ -20,6 +20,10 @@
   gap: 12px;
 }
 
+.sort__sort-list-item--drag {
+  display: none;
+}
+
 .sort__sort-button:checked ~ .sort__button-text::after {
   transform: translate(14px, -50%);
   transition: all 0.3s ease;
@@ -86,18 +90,23 @@
     top: 102px;
     border-radius: 24px 24px 0 0;
     padding: 59px 185px 20px 72px;
+    position: relative;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
+  .sort__sort-list-item--drag {
+    display: block;
+    position: absolute;
+    left: 50%;
+      transform: translateX(-50%);
+      top: 3px;
+  }
+
+  .sort__sort-drag-button {
       width: 28px;
       height: 4px;
       background-color: #00000060;
       border-radius: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 12px;
-    }
+      border: none;
   }
 
   .sort__sort-wrapper {

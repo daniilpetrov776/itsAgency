@@ -49,6 +49,10 @@
 }
 
 @media (max-width: $max-mobile-width) {
+  .card {
+    margin: 0 auto;
+  }
+
   .card__add-button {
     opacity: 1;
   }
