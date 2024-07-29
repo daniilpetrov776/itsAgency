@@ -18,4 +18,4 @@ const onSelectClick = (evt) => {
   }
 };
 
-document.addEventListener('click', onSelectClick);
+export { onSelectClick };

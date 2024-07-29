@@ -1,16 +1,29 @@
-// Пример функции для получения данных
-async function fetchData() {
-  try {
-    const response = await fetch('http://localhost:3001');
-    if (!response.ok) {
-      throw new Error(`Сеть ответила с ошибкой: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log(data); // Обработка полученных данных
-  } catch (error) {
-    console.error('Ошибка при получении данных:', error);
-  }
-}
+// async function fetchData() {
+//   try {
+//     const response = await fetch('https://66a77b8e53c13f22a3cfe81e.mockapi.io/card');
+//     if (!response.ok) {
+//       throw new Error(`Сеть ответила с ошибкой: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error('Ошибка при получении данных:', error);
+//   }
+// }
+const errorText = 'Не удалось связаться с сервером';
 
-// Вызов функции
-fetchData();
+const fetchData = () =>
+  fetch('https://66a77b8e53c13f22a3cfe81e.mockapi.io/card')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error();
+      }
+      return response.json();
+    })
+    .catch(() => {
+      throw new Error(errorText);
+    });
+
+const getData = () => fetchData();
+
+export { getData };

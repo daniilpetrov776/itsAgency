@@ -223,27 +223,7 @@
           </div>
           <div class="cards__products products">
             <ul class="products__products-list">
-              <li class="products__products-list-item card">
-                <picture>
-                  <source media="(min-width: 810px)"
-                    srcset="./images/mock-item@1x.webp 1x, ./images/mock-item@2x.webp 2x" width="278" height="278"
-                    type="image/webp">
-                  <source media="(min-width: 810px)" srcset="./images/mock-item@1x.png 1x, ./images/mock-item@2x.png 2x"
-                    width="278" height="278" type="image/png">
-                  <source media="(min-width: 320px)"
-                    srcset="./images/mock-item-mobile@1x.webp 1x, ./images/mock-item-mobile@2x.webp 2x" width="156"
-                    height="156" type="image/webp">
-                  <img class="card__card-image" src="./images/mock-item-mobile@1x.png" alt="Краска." width="156"
-                    height="156" srcset="./images/mock-item-mobile@2x.png@2x.png">
-                </picture>
-                <h3 class="card__card-title">Краска Wallquest, Brownsone MS90102</h3>
-                <div class="card__card-price-wrapper">
-                  <p class="card__card-price">4800 ₽</p>
-                  <button class="card__add-button add-button" type="button" aria-label="Добавить в корзину.">
-                    <img class="add-button__desktop" src="./images/plus.svg" alt="" width="20" height="20">
-                  </button>
-                </div>
-              </li>
+              <!-- Сюда вставляются карточки товаров с сервера -->
             </ul>
           </div>
         </div>
@@ -298,7 +278,7 @@
                 </button>
               </div>
             </li>
-            <!-- Сюда вставляются карточки товаров -->
+            <!-- Корзина. Сюда вставляются карточки товаров, добавленные в корзину -->
           </ul>
           <div class="cart__cart-checkout">
             <div class="cart__cart-total-wrapper">
@@ -314,7 +294,7 @@
   <footer class="page__footer footer"></footer>
 
   <!-- шаблон карточки товара в корзине -->
-  <template>
+  <template id="card-cart">
     <li class="cart__cart-list-item cart-product">
       <picture>
         <source media="(min-width: 320px)"
@@ -345,24 +325,24 @@
   </template>
   <!-- шаблон карточки товара -->
   <template id="card">
-    <li class="products__products-list-item">
+    <li class="products__products-list-item card">
       <picture>
-        <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.webp 1x, ./images/mock-item@2x.webp 2x"
-          width="278" height="278" type="image/webp">
-        <source media="(min-width: 1920px)" srcset="./images/mock-item@1x.png 1x, ./images/mock-item@2x.png 2x"
+        <source media="(min-width: 810px)"
+          srcset="" width="278" height="278"
+          type="image/webp">
+        <source media="(min-width: 810px)" srcset=""
           width="278" height="278" type="image/png">
         <source media="(min-width: 320px)"
-          srcset="./images/mock-item-mobile@1x.webp 1x, ./images/mock-item-mobile@2x.webp 2x" width="156" height="156"
-          type="image/webp">
-        <img class="card__card-image" src="./images/mock-item-mobile@1x.png" alt="Краска." width="156" height="156"
-          srcset="./images/mock-item-mobile@2x.png@2x.png">
+          srcset="" width="156"
+          height="156" type="image/webp">
+        <img class="card__card-image" src="" alt="Краска." width="156"
+          height="156" srcset="">
       </picture>
       <h3 class="card__card-title">Краска Wallquest, Brownsone MS90102</h3>
       <div class="card__card-price-wrapper">
         <p class="card__card-price">4800 ₽</p>
-        <button class="card__add-button add-button" aria-label="Добавить в корзину" type="button">
-          <img class="add-button__mobile" src="./images/plus-mobile.svg" alt="Добавить в корзину." width="16"
-            height="16">
+        <button class="card__add-button add-button" type="button" aria-label="Добавить в корзину.">
+          <img class="add-button__desktop" src="./images/plus.svg" alt="" width="20" height="20">
         </button>
       </div>
     </li>

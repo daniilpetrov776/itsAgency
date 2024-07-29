@@ -23,4 +23,4 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-swiper.init();
+export { swiper };
