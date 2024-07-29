@@ -97,48 +97,7 @@ function removeDragButtonHandler() {
   dragButton.removeEventListener('touchend', onTouchEnd);
 }
 // Дальше функционал самого фильтра;
-// const getCheckboxStates = () => ({
-//   new: document.querySelector('#filter-new').checked,
-//   available: document.querySelector('#filter-available').checked,
-//   contract: document.querySelector('#filter-contract').checked,
-//   exclusive: document.querySelector('#filter-exclusive').checked,
-//   onsale: document.querySelector('#filter-onsale').checked
-// });
 
-// const getCheckboxStates = () => ({
-//   new: document.querySelector('#filter-new')?.checked || false,
-//   available: document.querySelector('#filter-available')?.checked || false,
-//   contract: document.querySelector('#filter-contract')?.checked || false,
-//   exclusive: document.querySelector('#filter-exclusive')?.checked || false,
-//   onsale: document.querySelector('#filter-onsale')?.checked || false
-// });
-
-// const filterProducts = (products, states) => {
-//   // Проверяем, если все фильтры отключены
-//   if (Object.values(states).every((state) => !state)) {
-//     return products;
-//   }
-
-//   // Возвращаем отфильтрованные продукты
-//   return products.filter((product) => Object.keys(states).every((key) => {
-//     if (states[key]) {
-//       console.log(product[key])
-//       return product[key] === true;
-//     }
-//     return true;
-//   }));
-// };
-
-// const updateFilter = (products) => {
-//   const states = getCheckboxStates();
-//   const filteredProducts = filterProducts(products, states);
-//   // console.log(states)
-//   renderProducts(filteredProducts);
-// };
-
-// ['filter-new', 'filter-available', 'filter-contract', 'filter-exclusive', 'filter-onsale'].forEach((id) => {
-//   document.getElementById(id).addEventListener('change', updateFilter);
-// });
 export const getCheckboxStates = () => ({
   new: document.querySelector('#filter-new')?.checked || false,
   available: document.querySelector('#filter-available')?.checked || false,
@@ -146,10 +105,9 @@ export const getCheckboxStates = () => ({
   exclusive: document.querySelector('#filter-exclusive')?.checked || false,
   onsale: document.querySelector('#filter-onsale')?.checked || false
 });
-console.log(getCheckboxStates())
 
 function filterProducts(filterCriteria, products) {
-  const allKeysFalse = Object.values(filterCriteria).every(value => !value);
+  const allKeysFalse = Object.values(filterCriteria).every((value) => !value);
 
   if (allKeysFalse) {
     return products;
@@ -168,7 +126,6 @@ const renderFilteredPhotos = debounce((products) => {
 }, RERENDER_DELAY);
 
 const updateFilter = (products) => {
-  console.log(filterProducts(getCheckboxStates(), products))
   renderFilteredPhotos(filterProducts(getCheckboxStates(), products));
 };
 
