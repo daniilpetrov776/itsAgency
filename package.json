@@ -57,6 +57,8 @@
     "w3c-html-validator": "1.8.1"
   },
   "dependencies": {
+    "express": "^4.19.2",
+    "faker": "^6.6.6",
     "swiper": "^11.1.8"
   }
 }
