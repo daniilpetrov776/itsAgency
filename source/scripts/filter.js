@@ -1,5 +1,5 @@
 import { renderProducts, removeProducts } from './render-products.js';
-import { debounce } from './utils.js';
+import { debounce, declension } from './utils.js';
 import { initSort } from './select.js';
 
 const RERENDER_DELAY = 500;
@@ -8,7 +8,8 @@ const filterButton = document.querySelector('.cards-header__mobile-sort-button')
 const filterWrapper = document.querySelector('.sort__sort-wrapper');
 const filter = filterWrapper.querySelector('.sort__sort-list');
 const dragButton = filterWrapper.querySelector('.sort__sort-drag-button');
-const amountOfProducts = document.querySelector('.cards-header__amount-number');
+const amountOfProductsNumber = document.querySelector('.cards-header__amount-number');
+const amountOfProductsText = document.querySelector('.cards-header__amount-text');
 
 let startY;
 let currentY;
@@ -130,7 +131,7 @@ const updateFilter = (products) => {
   const sortFilteredProducts = initSort(filteredProducts);
   console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   renderFilteredPhotos(sortFilteredProducts);
-  amountOfProducts.textContent = sortFilteredProducts.length;
+  amountOfProductsText.textContent = declension(sortFilteredProducts.length);
 };
 // Чтобы избежать debounce при первом запуске и обеспечить более плавное отображение
 const firstLaunch = (products) => {
@@ -139,7 +140,7 @@ const firstLaunch = (products) => {
   console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   removeProducts();
   renderProducts(sortFilteredProducts);
-  amountOfProducts.textContent = sortFilteredProducts.length;
+  amountOfProductsText.textContent = declension(sortFilteredProducts.length);
 };
 
 const initFilters = (products) => {

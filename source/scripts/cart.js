@@ -1,4 +1,4 @@
-import { isEscapeKey, increase, decrease } from './utils.js';
+import { isEscapeKey, increase, decrease, declension } from './utils.js';
 import { renderToCart } from './render-products.js';
 
 const cartOpenButton = document.querySelector('.header-menu__button--cart');
@@ -33,7 +33,7 @@ const recalculate = (property) => {
   });
 
   if (property === 'quantity') {
-    productsTotalCart.textContent = total;
+    productsTotalCart.textContent = declension(total);
     productsTotal.textContent = total;
   } else if (property === 'price') {
     cartTotal.textContent = `${total} ₽`;
@@ -128,3 +128,16 @@ const addToCart = (product) => {
 };
 
 export { addToCart };
+
+
+// function updateCart(count, total) {
+//   const cartCountElement = document.getElementById('cart-count');
+//   const totalElement = document.getElementById('cart-total');
+//   cartCountElement.textContent = declension(count);
+//   totalElement.textContent = `${total}₽`;
+// }
+
+// // Пример использования
+// const itemCount = 22; // количество товаров в корзине
+// const totalAmount = 2500; // общая сумма товаров
+// updateCart(itemCount, totalAmount);
