@@ -1,5 +1,6 @@
 import { renderProducts, removeProducts } from './render-products.js';
 import { debounce } from './utils.js';
+import { initSort } from './select.js';
 
 const RERENDER_DELAY = 500;
 
@@ -119,21 +120,28 @@ function filterProducts(filterCriteria, products) {
     )
   );
 }
-
 const renderFilteredPhotos = debounce((products) => {
   removeProducts();
   renderProducts(products);
 }, RERENDER_DELAY);
 
 const updateFilter = (products) => {
-  renderFilteredPhotos(filterProducts(getCheckboxStates(), products));
+  // console.log(filterProducts(getCheckboxStates(), products))
+  const filteredProducts = filterProducts(getCheckboxStates(), products);
+  // console.log(filteredProducts)
+  const sortFilteredProducts = initSort(filteredProducts);
+  // console.log(initSort(filteredProducts))
+  renderFilteredPhotos(sortFilteredProducts);
 };
 
+
 const initFilters = (products) => {
-  filterList.addEventListener('click', (evt) => {
-    if (evt.target.matches('input')) {
+  updateFilter(products);
+  document.addEventListener('click', (evt) => {
+    if (evt.target.matches('input') || evt.target.classList.contains('select__option')) {
+      // console.log('фильтрация...')
       updateFilter(products);
     }
   });
 };
-export { initFilters };
+export { initFilters, renderFilteredPhotos };

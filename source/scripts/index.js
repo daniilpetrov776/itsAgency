@@ -1,4 +1,4 @@
-import { onSelectClick } from './select.js';
+import { onSelectClick, initSort } from './select.js';
 import { swiper } from './swiper.js';
 import { getData } from './api.js';
 import { renderProducts } from './render-products.js';
@@ -12,6 +12,7 @@ getData()
     // console.log(data);
     renderProducts(data);
     initFilters(data);
+    // initSort(data);
   })
   .catch(
     (err) => {
