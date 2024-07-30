@@ -8,6 +8,7 @@ const filterButton = document.querySelector('.cards-header__mobile-sort-button')
 const filterWrapper = document.querySelector('.sort__sort-wrapper');
 const filter = filterWrapper.querySelector('.sort__sort-list');
 const dragButton = filterWrapper.querySelector('.sort__sort-drag-button');
+const amountOfProducts = document.querySelector('.cards-header__amount-number');
 
 let startY;
 let currentY;
@@ -129,6 +130,7 @@ const updateFilter = (products) => {
   const sortFilteredProducts = initSort(filteredProducts);
   console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   renderFilteredPhotos(sortFilteredProducts);
+  amountOfProducts.textContent = sortFilteredProducts.length;
 };
 // Чтобы избежать debounce при первом запуске и обеспечить более плавное отображение
 const firstLaunch = (products) => {
@@ -137,6 +139,7 @@ const firstLaunch = (products) => {
   console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   removeProducts();
   renderProducts(sortFilteredProducts);
+  amountOfProducts.textContent = sortFilteredProducts.length;
 };
 
 const initFilters = (products) => {
