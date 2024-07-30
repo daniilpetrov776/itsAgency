@@ -6,11 +6,6 @@ const cartWrapper = document.querySelector('.cart__cart-background');
 const cartList = cartWrapper.querySelector('.cart__cart-list');
 const cartCloseButton = cartWrapper.querySelector('.cart__cart-close');
 const cartClearAllButton = cartWrapper.querySelector('.cart__cart-clear');
-const cartActionButton = cartWrapper.querySelector('.cart-product__action');
-// const cart = cartWrapper.querySelector('.cart__cart-wrapper');
-// const cartOpenButtonText = document.querySelector('.header-menu__button-text');
-// const counterPlus = cartWrapper.querySelector('.cart-product__increase');
-// const counterMinus = cartWrapper.querySelector('.cart-product__decrease');
 
 const onDocumentKeydown = (evt) => {
   if (isEscapeKey(evt)) {
@@ -42,33 +37,35 @@ const onCartActionButtonClick = (evt) => {
   }
 };
 
-const onCartClearAllButtonClick = (evt) => {
-  if (evt.target.classList.contains('cart__cart-clear')) {
-    const cards = cartList.querySelectorAll('.cart__cart-list-item');
-    cards.forEach((item) => item.remove());
-  }
+const onCartClearAllButtonClick = () => {
+  cartList.innerHTML = '';
 };
+
+const removeEventListeners = () => {
+  document.removeEventListener('keydown', onDocumentKeydown);
+  cartCloseButton.addEventListener('click', onCartCloseButtonClick);
+  cartClearAllButton.removeEventListener('click', onCartClearAllButtonClick);
+  cartList.removeEventListener('click' , onCounterClick);
+  cartWrapper.removeEventListener('click', onCartActionButtonClick);
+};
+
+const addEventListeners = () => {
+  document.addEventListener('keydown', onDocumentKeydown);
+  cartCloseButton.addEventListener('click', onCartCloseButtonClick);
+  cartClearAllButton.addEventListener('click', onCartClearAllButtonClick);
+  cartList.addEventListener('click' , onCounterClick);
+  cartWrapper.addEventListener('click', onCartActionButtonClick);
+};
+
 
 function closeCart () {
   cartWrapper.classList.add('cart__cart-background--hidden');
-  document.removeEventListener('keydown', onDocumentKeydown);
-  cartCloseButton.removeEventListener('click', onCartCloseButtonClick);
-  cartList.removeEventListener('click' , onCounterClick);
-  cartClearAllButton.removeEventListener('click', onCartClearAllButtonClick);
-  if (cartActionButton) {
-    cartActionButton.removeEventListener('click', onCartActionButtonClick);
-  }
+  removeEventListeners();
 }
 
 const onCartOpenButtonClick = () => {
   cartWrapper.classList.remove('cart__cart-background--hidden');
-  document.addEventListener('keydown', onDocumentKeydown);
-  cartCloseButton.addEventListener('click', onCartCloseButtonClick);
-  cartList.addEventListener('click' , onCounterClick);
-  cartClearAllButton.addEventListener('click', onCartClearAllButtonClick);
-  if (cartActionButton) {
-    cartActionButton.addEventListener('click', onCartActionButtonClick);
-  }
+  addEventListeners();
 };
 
 cartOpenButton.addEventListener('click', onCartOpenButtonClick);
