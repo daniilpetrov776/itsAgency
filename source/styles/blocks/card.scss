@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  min-height: 376px;
 }
 
 .card__card-title {
@@ -7,14 +8,15 @@
   line-height: 18px;
   font-weight: 300;
   letter-spacing: 0.02em;
-  padding: 24px 20px 0 0;
+  padding: 15px 20px 0 0;
+  margin: 0;
 }
 
 .card__card-price {
   font-size: 16px;
   line-height: 16px;
   font-weight: 600;
-  margin: 0;
+  margin: 23px 0 0;
 }
 
 .card__card-price-wrapper {
@@ -51,6 +53,7 @@
 @media (max-width: $max-mobile-width) {
   .card {
     margin: 0 auto;
+    min-height: 270px;
   }
 
   .card__add-button {
@@ -59,7 +62,7 @@
 
   .card__card-title {
     padding: 0;
-    margin: 21px 0 19px;
+    margin: 16px 0 19px;
   }
 
   .card:not(:last-child)::after {
@@ -70,5 +73,9 @@
     bottom: -34px;
     height: 1px;
     background-color: #00000010;
+  }
+
+  .card__card-price {
+    margin: 0;
   }
 }
