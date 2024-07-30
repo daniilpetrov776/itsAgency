@@ -1,7 +1,7 @@
 .cart__cart-background {
   position: fixed;
   display: flex;
-  width: 100vw;
+  width: 1000vw;
   height: 100%;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@
   top: 0;
   right: 0;
   background-color: #ffffff;
-  width: 653px;
+  width: 583px;
   height: 108vh;
   padding: 19px 23px 40px 40px;
   overflow-y: auto;
@@ -133,5 +133,9 @@
     width: 100%;
     height: 700px;
     overflow-y: auto;
+  }
+
+  .cart__cart-info {
+    width: 100%;
   }
 }

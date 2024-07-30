@@ -92,10 +92,14 @@
 
 @media (max-width: $max-mobile-width) {
   .cart-product__title-wrapper {
+    width: 145px;
+  }
+
+  .cart__cart-header {
     width: 100%;
   }
 
   .cart-product__interface {
-    width: 100%;
+    width: 70%;
   }
 }
