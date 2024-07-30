@@ -7,8 +7,6 @@ const Sort = {
 
 const selectValue = document.querySelector('.select__value');
 const selectBackground = document.querySelector('.cards-header__select-background');
-const selectOptions = document.querySelector('.select__dropdown');
-console.log(selectValue.textContent === selectOptions.querySelector('#cheap').textContent)
 
 // Открытие и закрытие
 const onSelectClick = (evt) => {

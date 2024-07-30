@@ -127,12 +127,14 @@ const renderFilteredPhotos = debounce((products) => {
 const updateFilter = (products) => {
   const filteredProducts = filterProducts(getCheckboxStates(), products);
   const sortFilteredProducts = initSort(filteredProducts);
+  console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   renderFilteredPhotos(sortFilteredProducts);
 };
 // Чтобы избежать debounce при первом запуске и обеспечить более плавное отображение
 const firstLaunch = (products) => {
   const filteredProducts = filterProducts(getCheckboxStates(), products);
   const sortFilteredProducts = initSort(filteredProducts);
+  console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   removeProducts();
   renderProducts(sortFilteredProducts);
 };
