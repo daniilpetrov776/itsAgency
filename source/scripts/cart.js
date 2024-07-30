@@ -128,16 +128,3 @@ const addToCart = (product) => {
 };
 
 export { addToCart };
-
-
-// function updateCart(count, total) {
-//   const cartCountElement = document.getElementById('cart-count');
-//   const totalElement = document.getElementById('cart-total');
-//   cartCountElement.textContent = declension(count);
-//   totalElement.textContent = `${total}₽`;
-// }
-
-// // Пример использования
-// const itemCount = 22; // количество товаров в корзине
-// const totalAmount = 2500; // общая сумма товаров
-// updateCart(itemCount, totalAmount);
