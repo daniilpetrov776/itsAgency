@@ -1,7 +1,3 @@
-import { renderFilteredPhotos } from './filter.js';
-
-const RERENDER_DELAY = 500;
-
 const Sort = {
   EXPENSIVE: 'Сначала дорогие',
   CHEAP: 'Сначала недорогие',
@@ -67,7 +63,6 @@ const getFilteredProducts = (products, filter) => {
 const initSort = (products) => {
   const result = getFilteredProducts(products, selectValue.textContent);
   return result;
-  // console.log(result)
 };
 
 export { onSelectClick, initSort };

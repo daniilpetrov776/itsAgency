@@ -8,7 +8,6 @@ const filterButton = document.querySelector('.cards-header__mobile-sort-button')
 const filterWrapper = document.querySelector('.sort__sort-wrapper');
 const filter = filterWrapper.querySelector('.sort__sort-list');
 const dragButton = filterWrapper.querySelector('.sort__sort-drag-button');
-const filterList = filterWrapper.querySelector('.sort__sort-list');
 
 let startY;
 let currentY;
@@ -126,20 +125,23 @@ const renderFilteredPhotos = debounce((products) => {
 }, RERENDER_DELAY);
 
 const updateFilter = (products) => {
-  // console.log(filterProducts(getCheckboxStates(), products))
   const filteredProducts = filterProducts(getCheckboxStates(), products);
-  // console.log(filteredProducts)
   const sortFilteredProducts = initSort(filteredProducts);
-  // console.log(initSort(filteredProducts))
   renderFilteredPhotos(sortFilteredProducts);
 };
-
+// Чтобы избежать debounce при первом запуске и обеспечить более плавное отображение
+const firstLaunch = (products) => {
+  const filteredProducts = filterProducts(getCheckboxStates(), products);
+  const sortFilteredProducts = initSort(filteredProducts);
+  removeProducts();
+  renderProducts(sortFilteredProducts);
+};
 
 const initFilters = (products) => {
-  updateFilter(products);
+  // updateFilter(products);
+  firstLaunch(products);
   document.addEventListener('click', (evt) => {
     if (evt.target.matches('input') || evt.target.classList.contains('select__option')) {
-      // console.log('фильтрация...')
       updateFilter(products);
     }
   });
