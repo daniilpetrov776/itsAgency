@@ -14,6 +14,7 @@ const renderProducts = (products) => {
     sources[2].srcset = `./images/mock-item-mobile${image}@1x.webp, ./images/mock-item-mobile${image}@2x.webp 2x`;
     card.dataset.id = id;
     cardImage.src = `./images/mock-item-mobile${image}@1x.png`;
+    cardImage.srcset = `./images/mock-item-mobile${image}@2x.png`;
     cardPrice.textContent = `${price} ₽`;
     cardTitle.textContent = name;
 

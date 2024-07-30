@@ -252,35 +252,6 @@
             <button class="cart__cart-clear" type="button">очистить список</button>
           </div>
           <ul class="cart__cart-list">
-            <li class="cart__cart-list-item cart-product">
-              <picture>
-                <source media="(min-width: 320px)"
-                  srcset="./images/mock-item-cart@1x.webp 1x, ./images/mock-item-cart@2x.webp 2x" width="96" height="96"
-                  type="image/webp">
-                <img class="cart-product__image" src="./images/mock-item-cart@1x.png" alt="Краска." width="96"
-                  height="96" srcset="./images/mock-item-cart@2x.png">
-              </picture>
-              <div class="cart-product__title-wrapper">
-                <h3 class="cart-product__title">Краска Wallquest, Brownsone MS90102</h3>
-                <p class="cart-product__price">9600 ₽</p>
-              </div>
-              <div class="cart-product__interface">
-                <div class="cart-product__count-wrapper">
-                  <button class="cart-product__decrease cart-product__cart-button" type="button"
-                    aria-label="Уменьшить.">
-                    <img src="./images/minus.svg" alt="" width="16" height="16">
-                  </button>
-                  <div class="cart-product__product-counter">2</div>
-                  <button class="cart-product__increase cart-product__cart-button" type="button"
-                    aria-label="Увеличить.">
-                    <img src="./images/plus-mobile.svg" alt="" width="16" height="16">
-                  </button>
-                </div>
-                <button class="cart-product__action" type="button" aria-label="Удалить.">
-                  <img src="./images/close.svg" alt="" width="24" height="24">
-                </button>
-              </div>
-            </li>
             <!-- Корзина. Сюда вставляются карточки товаров, добавленные в корзину -->
           </ul>
           <div class="cart__cart-checkout">
@@ -315,7 +286,7 @@
           <button class="cart-product__decrease cart-product__cart-button" type="button" aria-label="Уменьшить.">
             <img src="./images/minus.svg" alt="" width="16" height="16">
           </button>
-          <div class="cart-product__product-counter">2</div>
+          <div class="cart-product__product-counter" id="data-counter">2</div>
           <button class="cart-product__increase cart-product__cart-button" type="button" aria-label="Увеличить.">
             <img src="./images/plus-mobile.svg" alt="" width="16" height="16">
           </button>
