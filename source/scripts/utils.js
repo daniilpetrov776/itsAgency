@@ -8,4 +8,18 @@ const debounce = (callback, timeoutDelay) => {
   };
 };
 
-export { isEscapeKey, debounce };
+const increase = (el) => {
+  let currentCount = parseInt(el.textContent, 10);
+  currentCount += 1;
+  el.textContent = currentCount;
+};
+
+const decrease = (el) => {
+  let currentCount = parseInt(el.textContent, 10);
+  if (currentCount > 0) {
+    currentCount -= 1;
+    el.textContent = currentCount;
+  }
+};
+
+export { isEscapeKey, debounce, increase, decrease };

@@ -1,22 +1,20 @@
-import { isEscapeKey } from './utils.js';
+import { isEscapeKey, increase, decrease } from './utils.js';
 
 const cartTemplate = document.querySelector('#card-cart').content.querySelector('.cart__cart-list-item');
 const cartOpenButton = document.querySelector('.header-menu__button--cart');
 const cartWrapper = document.querySelector('.cart__cart-background');
 const cartList = cartWrapper.querySelector('.cart__cart-list');
 const cartCloseButton = cartWrapper.querySelector('.cart__cart-close');
-const cart = cartWrapper.querySelector('.cart__cart-wrapper');
-const cartOpenButtonText = document.querySelector('.header-menu__button-text');
-// console.log(cartCards)
+const cartClearAllButton = cartWrapper.querySelector('.cart__cart-clear');
+const cartActionButton = cartWrapper.querySelector('.cart-product__action');
+// const cart = cartWrapper.querySelector('.cart__cart-wrapper');
+// const cartOpenButtonText = document.querySelector('.header-menu__button-text');
+// const counterPlus = cartWrapper.querySelector('.cart-product__increase');
+// const counterMinus = cartWrapper.querySelector('.cart-product__decrease');
+
 const onDocumentKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
-    closeCart();
-  }
-};
-
-const onDocumentClick = (evt) => {
-  if (!cart.contains(evt.target) && evt.target !== cartOpenButton && evt.target !== cartOpenButtonText) {
     closeCart();
   }
 };
@@ -26,18 +24,51 @@ const onCartCloseButtonClick = () => {
   document.removeEventListener('keydown', onDocumentKeydown);
 };
 
+const onCounterClick = (evt) => {
+  if (evt.target.classList.contains('cart-product__decrease')) {
+    decrease(evt.target.nextElementSibling);
+    if (parseInt(evt.target.nextElementSibling.textContent, 10) === 0) {
+      (evt.target.closest('.cart__cart-list-item')).remove();
+    }
+  }
+  if (evt.target.classList.contains('cart-product__increase')) {
+    increase(evt.target.previousElementSibling);
+  }
+};
+
+const onCartActionButtonClick = (evt) => {
+  if (evt.target.classList.contains('cart-product__action')) {
+    (evt.target.closest('.cart__cart-list-item')).remove();
+  }
+};
+
+const onCartClearAllButtonClick = (evt) => {
+  if (evt.target.classList.contains('cart__cart-clear')) {
+    const cards = cartList.querySelectorAll('.cart__cart-list-item');
+    cards.forEach((item) => item.remove());
+  }
+};
+
 function closeCart () {
   cartWrapper.classList.add('cart__cart-background--hidden');
   document.removeEventListener('keydown', onDocumentKeydown);
-  document.removeEventListener('click', onDocumentClick);
   cartCloseButton.removeEventListener('click', onCartCloseButtonClick);
+  cartList.removeEventListener('click' , onCounterClick);
+  cartClearAllButton.removeEventListener('click', onCartClearAllButtonClick);
+  if (cartActionButton) {
+    cartActionButton.removeEventListener('click', onCartActionButtonClick);
+  }
 }
 
 const onCartOpenButtonClick = () => {
   cartWrapper.classList.remove('cart__cart-background--hidden');
   document.addEventListener('keydown', onDocumentKeydown);
-  document.addEventListener('click', onDocumentClick);
   cartCloseButton.addEventListener('click', onCartCloseButtonClick);
+  cartList.addEventListener('click' , onCounterClick);
+  cartClearAllButton.addEventListener('click', onCartClearAllButtonClick);
+  if (cartActionButton) {
+    cartActionButton.addEventListener('click', onCartActionButtonClick);
+  }
 };
 
 cartOpenButton.addEventListener('click', onCartOpenButtonClick);
@@ -58,6 +89,7 @@ const renderToCart = ({id, name, price, image}) => {
   cardPrice.textContent = `${price} ₽`;
   cardTitle.textContent = name;
   counter.textContent = 1;
+  counter.dataset.counter = id;
 
   fragment.appendChild(card);
 
@@ -67,20 +99,9 @@ const renderToCart = ({id, name, price, image}) => {
 const increaseCounter = (id) => {
   const cartCards = [...cartWrapper.querySelectorAll('.cart__cart-list-item')];
   const item = cartCards.find((product) => product.getAttribute('data-id') === id.toString());
-  console.log(item)
   if (item) {
-    let counter = 1; // Инициализируем счётчик с 1
-
-    const increase = () => {
-      counter += 1; // Увеличиваем счётчик на 1
-      return counter; // Возвращаем текущее значение счётчика
-    };
-    // item.setAttribute('data-counter', counter + 1);
-
-    const cardCounter = cart.querySelector('.cart-product__product-counter');
-    const result = counter + 1;
-    console.log(counter)
-    cardCounter.textContent = increase();
+    const cardCounter = item.querySelector('.cart-product__product-counter');
+    increase(cardCounter);
   }
 };
 
@@ -90,10 +111,8 @@ const addToCart = (product) => {
   if (existingProduct) {
     increaseCounter(product.id);
   } else {
-    // Если товара нет, добавляем его в корзину с начальным счетчиком 1
     renderToCart(product);
   }
 };
-
 
 export { addToCart };
