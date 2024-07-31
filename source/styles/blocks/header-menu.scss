@@ -37,11 +37,8 @@
   .header-menu__list-item {
     &--cart {
       margin: 0;
+      position: relative;
+      right: -6px;
     }
-  }
-
-  .header-menu__list-item--cart {
-    position: relative;
-    right: -6px;
   }
 }

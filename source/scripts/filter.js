@@ -8,7 +8,6 @@ const filterButton = document.querySelector('.cards-header__mobile-sort-button')
 const filterWrapper = document.querySelector('.sort__sort-wrapper');
 const filter = filterWrapper.querySelector('.sort__sort-list');
 const dragButton = filterWrapper.querySelector('.sort__sort-drag-button');
-const amountOfProductsNumber = document.querySelector('.cards-header__amount-number');
 const amountOfProductsText = document.querySelector('.cards-header__amount-text');
 
 let startY;
@@ -129,6 +128,7 @@ const renderFilteredPhotos = debounce((products) => {
 const updateFilter = (products) => {
   const filteredProducts = filterProducts(getCheckboxStates(), products);
   const sortFilteredProducts = initSort(filteredProducts);
+  // eslint-disable-next-line no-console
   console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   renderFilteredPhotos(sortFilteredProducts);
   amountOfProductsText.textContent = declension(sortFilteredProducts.length);
@@ -137,6 +137,7 @@ const updateFilter = (products) => {
 const firstLaunch = (products) => {
   const filteredProducts = filterProducts(getCheckboxStates(), products);
   const sortFilteredProducts = initSort(filteredProducts);
+  // eslint-disable-next-line no-console
   console.log(sortFilteredProducts); // Оставил консоль лог, чтобы можно было проверить, что фильтрация действительно работает правильно
   removeProducts();
   renderProducts(sortFilteredProducts);

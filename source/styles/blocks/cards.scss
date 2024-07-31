@@ -1,8 +1,8 @@
 .cards__cards-header {
-  margin: 0 0 28px 0;
+  margin: 0 0 28px;
 }
 
-@media (max-width: $max-mobile-width)  {
+@media (max-width: $max-mobile-width) {
   .cards__cards-header {
     margin: 0 0 6px;
   }

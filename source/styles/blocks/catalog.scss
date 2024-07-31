@@ -9,3 +9,9 @@
     padding: 0 4px;
   }
 }
+
+@media (min-width: $max-mobile-width) and (max-width: $max-tablet-width) {
+  .catalog__products-wrapper {
+    grid-template-columns: 327px 1170px;
+  }
+}

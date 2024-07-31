@@ -35,7 +35,6 @@
 
 .sort__sort-button:focus-visible ~ .sort__button-text::before {
   outline: solid 2px #000000;
-  // z-index: 2;
 }
 
 .sort__button-text {
@@ -82,7 +81,6 @@
   .sort__sort-list {
     display: flex;
     opacity: 1;
-    position: fixed;
     z-index: 4;
     background-color: #ffffff;
     width: 100%;
@@ -97,27 +95,26 @@
     display: block;
     position: absolute;
     left: 50%;
-      transform: translateX(-50%);
-      top: 3px;
+    transform: translateX(-50%);
+    top: 3px;
   }
 
   .sort__sort-drag-button {
-      width: 28px;
-      height: 4px;
-      background-color: #00000060;
-      border-radius: 40px;
-      border: none;
+    width: 28px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.38);
+    border-radius: 40px;
+    border: none;
   }
 
   .sort__sort-wrapper {
     padding: 0;
     display: flex;
     position: fixed;
-    width: 1000vw;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #00000070;
+    background-color: rgba(0, 0, 0, 0.44);
     z-index: 2;
 
     &--hidden {

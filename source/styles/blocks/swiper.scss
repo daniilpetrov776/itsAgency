@@ -2,7 +2,8 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  background-image: url('../../images/hero@1x.jpg');
+  background-image: url("../../images/hero@1x.jpg");
+  width: 100%;
 }
 
 .swiper-wrapper {
@@ -30,11 +31,9 @@
 }
 
 .swiper {
-  width: 1920px;
+  width: 100vw;
+  max-width: 1920px;
   height: 560px;
-}
-.swiper-slide {
-  width: 100%;
 }
 
 .swiper-button-next {
@@ -43,11 +42,11 @@
   }
 }
 
-.swiper-button-next:focus-visible.swiper-button-next:after {
+.swiper-button-next:focus-visible.swiper-button-next::after {
   outline: solid 3px #000000;
 }
 
-.swiper-button-prev:focus-visible.swiper-button-prev:after {
+.swiper-button-prev:focus-visible.swiper-button-prev::after {
   outline: solid 3px #000000;
 }
 
@@ -57,14 +56,14 @@
   }
 }
 
-.swiper-button-next:after {
+.swiper-button-next::after {
   position: relative;
   top: 94px;
   right: 407px;
   color: #ffffff;
 }
 
-.swiper-button-prev:after {
+.swiper-button-prev::after {
   position: relative;
   top: 94px;
   left: 407px;
@@ -75,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00000066;
+  background-color: rgba(0, 0, 0, 0.4);
   width: 124px;
   height: 32px;
   border-radius: 16px;
@@ -84,7 +83,7 @@
   transform: translateX(-44%);
 }
 
-.swiper-pagination .swiper-pagination-bullet  {
+.swiper-pagination .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
 }
