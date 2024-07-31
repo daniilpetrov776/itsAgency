@@ -1,5 +1,5 @@
 .products__products-list {
-  padding: 0;
+  padding: 0 0 140px;
   margin: 0;
   list-style-type: none;
   display: grid;
@@ -14,6 +14,7 @@
 
 @media (max-width: $max-mobile-width) {
   .products__products-list {
+    padding: 0 0 64px;
     grid-template-columns: 1fr 1fr;
     gap: 59px 15px;
   }
