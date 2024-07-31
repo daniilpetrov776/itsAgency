@@ -1,5 +1,5 @@
 import { renderProducts, removeProducts } from './render-products.js';
-import { debounce, declension } from './utils.js';
+import { debounce, throttle, declension } from './utils.js';
 import { initSort } from './select.js';
 
 const RERENDER_DELAY = 500;
@@ -49,11 +49,23 @@ const onFilterButtonClick = () => {
 filterButton.addEventListener('click', onFilterButtonClick);
 
 const onTouchStart = (evt) => {
+  evt.preventDefault();
   isDragging = true;
   startY = evt.touches[0].clientY;
 };
 
-const onTouchMove = (evt) => {
+// const onTouchMove = (evt) => {
+//   if (isDragging) {
+//     currentY = evt.touches[0].clientY;
+//     const deltaY = currentY - startY;
+//     if (deltaY > 0) {
+//       setFilterStyles({ transform: `translateY(${deltaY}px)` });
+//     }
+//   }
+// };
+
+const onTouchMove = throttle((evt) => {
+  evt.preventDefault();
   if (isDragging) {
     currentY = evt.touches[0].clientY;
     const deltaY = currentY - startY;
@@ -61,9 +73,10 @@ const onTouchMove = (evt) => {
       setFilterStyles({ transform: `translateY(${deltaY}px)` });
     }
   }
-};
+}, 1);
 
-const onTouchEnd = () => {
+const onTouchEnd = (evt) => {
+  evt.preventDefault();
   if (isDragging) {
     const deltaY = currentY - startY;
     if (deltaY > 50) {

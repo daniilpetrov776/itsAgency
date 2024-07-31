@@ -91,7 +91,6 @@ const addEventListeners = () => {
   cartWrapper.addEventListener('click', onCartActionButtonClick);
 };
 
-
 function closeCart () {
   cartWrapper.classList.add('cart__cart-background--hidden');
   removeEventListeners();
