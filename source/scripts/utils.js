@@ -8,6 +8,18 @@ const debounce = (callback, timeoutDelay) => {
   };
 };
 
+function throttle (callback, delayBetweenFrames) {
+  let lastTime = 0;
+
+  return (...rest) => {
+    const now = new Date();
+    if (now - lastTime >= delayBetweenFrames) {
+      callback.apply(this, rest);
+      lastTime = now;
+    }
+  };
+}
+
 const increase = (el) => {
   let currentCount = parseInt(el.textContent, 10);
   currentCount += 1;
@@ -32,4 +44,4 @@ const declension = (count) => {
   return `${count} товаров`;
 };
 
-export { isEscapeKey, debounce, increase, decrease, declension };
+export { isEscapeKey, debounce, throttle, increase, decrease, declension };
