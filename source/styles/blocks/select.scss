@@ -1,0 +1,76 @@
+.select {
+  width: 280px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  background-color: #ffffff;
+}
+
+.select__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: none;
+  z-index: 3;
+  background-color: #ffffff;
+}
+
+
+.select__option,
+.select__value {
+  font-size: 12px;
+  line-height: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-height: 48px;
+  padding: 0 0 0 70px;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.select__value {
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../../images/polygon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -14px;
+  }
+
+  @include state-styles(0.3,0.7, 0.1s);
+}
+
+.select:focus .select__dropdown {
+  display: block;
+}
+
+.select__option:hover {
+  background-color: #7bb899;
+  transition: background-color 0.3s;
+}
+
+@media (max-width: $max-mobile-width) {
+  .select {
+    width: 150px;
+  }
+
+  .select__option,
+  .select__value {
+    padding: 0 0 0 4px;
+  }
+}

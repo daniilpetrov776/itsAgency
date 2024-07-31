@@ -1,0 +1,16 @@
+.add-button {
+  min-width: 80px;
+  min-height: 32px;
+  background-color: #7bb899;
+  border-radius: 8px;
+  border: none;
+}
+
+@media (max-width: $max-mobile-width) {
+  .add-button {
+    background-color: #f2f2f2;
+    min-width: 40px;
+    min-height: 24px;
+    border-radius: 6px;
+  }
+}

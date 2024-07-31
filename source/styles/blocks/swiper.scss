@@ -1,0 +1,89 @@
+.swiper-slide {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images/hero@1x.jpg");
+  width: 100%;
+}
+
+.swiper-wrapper {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  height: 560px;
+}
+
+.swiper__slide-header {
+  font-size: 72px;
+  line-height: 63px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 217px 0 25px;
+}
+
+.swiper__slide-content {
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  max-width: 472px;
+  margin: 0 auto;
+}
+
+.swiper {
+  width: 100vw;
+  max-width: 1920px;
+  height: 560px;
+}
+
+.swiper-button-next {
+  &:focus {
+    outline: none;
+  }
+}
+
+.swiper-button-next:focus-visible.swiper-button-next::after {
+  outline: solid 3px #000000;
+}
+
+.swiper-button-prev:focus-visible.swiper-button-prev::after {
+  outline: solid 3px #000000;
+}
+
+.swiper-button-prev {
+  &:focus {
+    outline: none;
+  }
+}
+
+.swiper-button-next::after {
+  position: relative;
+  top: 94px;
+  right: 407px;
+  color: #ffffff;
+}
+
+.swiper-button-prev::after {
+  position: relative;
+  top: 94px;
+  left: 407px;
+  color: #ffffff;
+}
+
+.swiper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 124px;
+  height: 32px;
+  border-radius: 16px;
+  left: 50%;
+  bottom: 39px;
+  transform: translateX(-44%);
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}

@@ -1,0 +1,124 @@
+.sort__sort-wrapper {
+  padding: 7px 0 0 112px;
+  min-width: 367px;
+}
+
+.sort__sort-list {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap column;
+  padding: 0;
+  list-style-type: none;
+  width: 170px;
+  gap: 20px;
+}
+
+.sort__sort-list-item {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort__sort-list-item--drag {
+  display: none;
+}
+
+.sort__sort-button:checked ~ .sort__button-text::after {
+  transform: translate(14px, -50%);
+  transition: all 0.3s ease;
+}
+
+.sort__sort-button:checked ~ .sort__button-text::before {
+  background-color: #7bb899;
+}
+
+.sort__sort-button:focus-visible ~ .sort__button-text::before {
+  outline: solid 2px #000000;
+}
+
+.sort__button-text {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 22px;
+    border-radius: 40px;
+    border: none;
+    background-color: #f2f2f2;
+    left: -48px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000000;
+    top: 50%;
+    left: -41px;
+    transform: translateY(-50%);
+  }
+
+  @include state-styles(0.3, 0.7, 0.1s);
+}
+
+.sort__sort-touch-button {
+  display: none;
+}
+
+@media (max-width: $max-mobile-width) {
+  .sort__sort-list {
+    display: flex;
+    opacity: 1;
+    z-index: 4;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    top: 102px;
+    border-radius: 24px 24px 0 0;
+    padding: 59px 185px 20px 72px;
+    position: relative;
+  }
+
+  .sort__sort-list-item--drag {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3px;
+  }
+
+  .sort__sort-drag-button {
+    width: 28px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.38);
+    border-radius: 40px;
+    border: none;
+  }
+
+  .sort__sort-wrapper {
+    padding: 0;
+    display: flex;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.44);
+    z-index: 2;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

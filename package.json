@@ -18,6 +18,7 @@
     "build": "gulp buildProd",
     "preview": "npm run build && browser-sync start -s build/ --cors --no-notify --no-ui",
     "lint": "npm-run-all -pc lint:**",
+    "lint:fix": "stylelint \"source/styles/**/*.scss\" --fix",
     "lint:spaces": "ec --exclude vendor/*",
     "lint:markup": "cd source && html-validator --quiet",
     "lint:html": "linthtml source/**/*.html --config .linthtmlrc",
@@ -54,5 +55,10 @@
     "stylelint": "16.6.1",
     "stylelint-config-htmlacademy": "4.2.3",
     "w3c-html-validator": "1.8.1"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "faker": "^6.6.6",
+    "swiper": "^11.1.8"
   }
 }

@@ -1,0 +1,17 @@
+.catalog__products-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 56px 0 0;
+}
+
+@media (max-width: $max-mobile-width) {
+  .catalog-section-wrapper {
+    padding: 0 4px;
+  }
+}
+
+@media (min-width: $max-mobile-width) and (max-width: $max-tablet-width) {
+  .catalog__products-wrapper {
+    grid-template-columns: 327px 1170px;
+  }
+}
