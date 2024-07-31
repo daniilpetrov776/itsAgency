@@ -5,6 +5,9 @@
 }
 
 @media (max-width: $max-mobile-width) {
+  .catalog {
+    padding: 0 20px;
+  }
   .catalog-section-wrapper {
     padding: 0 4px;
   }

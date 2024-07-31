@@ -15,7 +15,7 @@
 
 .cart-product__title-wrapper {
   width: 165px;
-  margin: 0 45px 0 8px;
+  margin: 0 38px 0 8px;
 }
 
 .cart-product__title {
@@ -58,7 +58,7 @@
 .cart-product__product-counter {
   font-size: 16px;
   line-height: 16px;
-  margin: 0 19px;
+  margin: 0 17px 0 27px;
 }
 
 .cart-product__decrease {
@@ -89,7 +89,8 @@
 
 @media (max-width: $max-mobile-width) {
   .cart-product__title-wrapper {
-    width: 145px;
+    width: 235px;
+    margin: 0;
   }
 
   .cart__cart-header {
@@ -97,6 +98,11 @@
   }
 
   .cart-product__interface {
-    width: 70%;
+    width: 100%;
+    padding: 0 50px 0 0;
+  }
+
+  .cart-product__product-counter {
+    margin: 0 19px;
   }
 }

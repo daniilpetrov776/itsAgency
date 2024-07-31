@@ -75,6 +75,11 @@ const onCartClearAllButtonClick = () => {
   recalculate('quantity');
 };
 
+
+const onTouchMove = (evt) => {
+  evt.preventDefault();
+};
+
 const removeEventListeners = () => {
   document.removeEventListener('keydown', onDocumentKeydown);
   cartCloseButton.addEventListener('click', onCartCloseButtonClick);
@@ -89,8 +94,8 @@ const addEventListeners = () => {
   cartClearAllButton.addEventListener('click', onCartClearAllButtonClick);
   cartList.addEventListener('click' , onCounterClick);
   cartWrapper.addEventListener('click', onCartActionButtonClick);
+  // cartWrapper.addEventListener('touchmove', onTouchMove)
 };
-
 
 function closeCart () {
   cartWrapper.classList.add('cart__cart-background--hidden');
